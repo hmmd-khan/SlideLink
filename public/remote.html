@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101827">
+  <title>SlideLink Remote</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="remote-body">
+  <main class="remote-shell">
+    <header class="brand compact"><div class="brand-mark">S</div><div><h1>SlideLink</h1>
+      <p>Presentation remote</p></div></header>
+      <div class="connection"><span id="connectionDot" class="dot"></span><span id="connectionText">Connecting…</span></div>
+    <section id="joinPanel" class="panel">
+      <h2>Connect to your presentation</h2>
+      <label for="codeInput">6-digit pairing code</label>
+      <input id="codeInput" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456">
+      <button id="join" class="primary">Connect</button>
+      <p id="joinError" class="error" aria-live="polite"></p>
+    </section>
+    <section id="controlPanel" class="panel controls hidden">
+      <div class="slide-controls">
+        <button id="previous" class="slide-button secondary" aria-label="Previous slide"><span>←</span><small>PREVIOUS</small></button>
+        <button id="next" class="slide-button primary" aria-label="Next slide"><span>→</span><small>NEXT SLIDE</small></button>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite">Connect the laptop helper to begin.</p>
+      <button id="disconnect" class="link-button">Disconnect</button>
+      <p class="hint">Keep this page open and the phone awake during your presentation.</p>
+    </section>
+    <footer>Works with Google Slides and PowerPoint when the slideshow window is active.</footer>
+  </main>
+  <script src="/remote.js"></script>
+</body>
+</html>

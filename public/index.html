@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlideLink — Presentation Remote</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand"><div class="brand-mark">S</div><div><h1>SlideLink</h1><p>Turn your phone into a presentation remote.</p></div></header>
+    <section class="panel">
+      <span class="eyebrow">LAPTOP SETUP</span>
+      <h2>Create a presentation session</h2>
+      <p>Open Google Slides or PowerPoint on this laptop, start the slideshow, then create a session below.</p>
+      <button id="create" class="primary">Create pairing code</button>
+      <div id="session" class="session hidden">
+        <p class="muted">Enter this code in the phone remote:</p>
+        <div id="code" class="code">------</div>
+        <div id="status" class="status"><span class="dot"></span> Waiting for laptop helper…</div>
+        <div id="remoteStatus" class="muted"></div>
+        <div class="addresses">
+          <h3>Open the remote on your phone</h3>
+          <p>Connect both devices to the same Wi-Fi, then open one of these addresses on your phone:</p>
+          <ul id="addressList"><li>Loading local addresses…</li></ul>
+          <p class="hint">Use the address with <code>/remote.html</code> at the end. Example: <code>http://192.168.1.20:3000/remote.html</code></p>
+        </div>
+        <button id="newSession" class="secondary">Create a new session</button>
+      </div>
+    </section>
+    <section class="panel steps">
+      <span class="eyebrow">HOW TO USE</span>
+      <ol>
+        <li>Install the laptop helper from the <code>helper</code> folder (one-time setup).</li>
+        <li>Start this web server and create a pairing code.</li>
+        <li>Run the laptop helper and enter the code.</li>
+        <li>Open the remote page on your phone and enter the same code.</li>
+        <li>Click the slideshow window once to focus it. Use the phone's Next and Previous buttons.</li>
+      </ol>
+      <p class="note">SlideLink sends keyboard arrows to the active laptop window. It does not upload or read your slides.</p>
+    </section>
+    <footer>Local-network MVP · No account · Session expires after 3 hours</footer>
+  </main>
+  <script src="/host.js"></script>
+</body>
+</html>
