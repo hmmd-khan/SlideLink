@@ -2,8 +2,18 @@
   "name": "slidelink",
   "version": "1.0.0",
   "private": true,
-  "description": "A local-network web remote for Google Slides and PowerPoint",
+  "description": "A web remote for Google Slides and PowerPoint (local network or Vercel + Upstash)",
   "main": "server.js",
-  "scripts": { "start": "node server.js", "test": "node --test" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "dev:cloud": "node scripts/dev-api.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.40.0"
+  }
 }

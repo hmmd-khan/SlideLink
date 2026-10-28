@@ -1,0 +1,7 @@
+# Local-only files that must never be treated as part of the cloud deployment.
+server.js
+index.backup.js
+tests
+helper
+scripts
+TESTING.md

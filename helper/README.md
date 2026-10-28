@@ -22,6 +22,8 @@ python3 -m pip install -r requirements.txt
 python3 slidelink_helper.py
 ```
 
+For the online (Vercel) version set `SLIDELINK_SERVER` to the site address, for example `https://your-site.vercel.app` (PowerShell: `$env:SLIDELINK_SERVER = "https://your-site.vercel.app"`). You can also pass the code as an argument: `py slidelink_helper.py 123456`. `SLIDELINK_POLL_INTERVAL` (seconds, default 0.3) controls how often the helper checks for taps.
+
 If the server is not running on the same laptop, set `SLIDELINK_SERVER` to its HTTP base URL, for example `http://192.168.1.20:3000`.
 
 ## Important

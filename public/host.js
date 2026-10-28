@@ -14,6 +14,21 @@ async function loadAddresses() {
     const data = await response.json();
     addressList.replaceChildren();
     if (!data.addresses.length) {
+      const onLocalhost = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
+      if (!onLocalhost) {
+        // Hosted online (e.g. Vercel): the phone does not need the laptop's LAN address.
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = `${location.origin}/remote.html`;
+        a.textContent = a.href;
+        li.appendChild(a);
+        addressList.appendChild(li);
+        const intro = document.querySelector(".addresses p");
+        if (intro) intro.textContent = "Open this address on your phone (any network, including mobile data):";
+        const hint = document.querySelector(".addresses .hint");
+        if (hint) hint.classList.add("hidden");
+        return;
+      }
       addressList.innerHTML = "<li>No LAN address detected. Check your Wi-Fi connection.</li>";
       return;
     }
