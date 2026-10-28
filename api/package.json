@@ -1,7 +1,0 @@
-
-{
-  "type": "module",
-  "dependencies": {
-    "@upstash/redis": "^1.40.0"
-  }
-}
